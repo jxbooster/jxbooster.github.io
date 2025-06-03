@@ -1,0 +1,308 @@
+:root {
+    --bg-color: #12121F;
+    --card-bg: #1A1A2E;
+    --primary-text: #E0E0E0;
+    --secondary-text: #A0A0B0;
+    --accent-color: #00A8FF;
+    --accent-hover: #007BFF;
+    --glow-color-main: rgba(0, 168, 255, 0.15);
+    --border-color: rgba(0, 168, 255, 0.2);
+    --final-accent: #FF4081;
+    --final-glow: rgba(255, 64, 129, 0.25);
+
+    --border-radius: 12px;
+    --card-padding: 25px;
+    --transition-speed: 0.3s;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 15px; /* Добавил боковые отступы для body */
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(0, 168, 255, 0.04) 0%, transparent 20%),
+        radial-gradient(circle at 80% 30%, rgba(0, 168, 255, 0.04) 0%, transparent 15%),
+        radial-gradient(circle at 30% 80%, rgba(255, 64, 129, 0.04) 0%, transparent 20%),
+        radial-gradient(circle at 70% 70%, rgba(0, 168, 255, 0.04) 0%, transparent 15%);
+    background-size: 250% 250%; animation: subtleShine 25s linear infinite;
+}
+@keyframes subtleShine { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
+
+.container { width: 100%; max-width: 1000px; z-index: 1; }
+
+header { text-align: center; margin-bottom: 50px; animation: fadeInDown 0.8s var(--transition-speed) ease-out backwards; }
+header .logo { font-family: 'Exo 2', sans-serif; font-size: 3.2em; font-weight: 700; color: var(--primary-text); letter-spacing: -1px; margin-bottom: 5px; }
+header .logo .tech { color: var(--accent-color); font-weight: 700; }
+header .tagline { font-family: 'Exo 2', sans-serif; font-size: 1.1em; color: var(--secondary-text); font-weight: 300; }
+
+.project-grid { display: grid; grid-template-columns: 1fr; gap: 35px; }
+@media (min-width: 800px) { .project-grid { grid-template-columns: 1fr 1fr; } }
+
+.project-card {
+    background-color: var(--card-bg); border-radius: var(--border-radius); padding: var(--card-padding);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2), 0 0 20px var(--glow-color, transparent) inset;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
+    animation: fadeInUp 0.8s var(--transition-speed) ease-out backwards;
+    overflow: hidden; position: relative;
+}
+.project-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%;
+    background: var(--accent-color); transition: width 0.4s ease;
+}
+.project-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 30px var(--glow-color, transparent) inset, 0 0 15px var(--glow-color, transparent);
+}
+.project-card:hover::before { width: 10px; }
+
+.project-card:nth-child(1) { animation-delay: 0.2s; --glow-color: var(--glow-color-main); }
+.project-card:nth-child(1):hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 40px var(--glow-color-main) inset, 0 0 20px var(--glow-color-main);
+}
+.project-card:nth-child(2) {
+    animation-delay: 0.4s; --glow-color: var(--final-glow);
+    border-color: rgba(255, 64, 129, 0.3);
+}
+.project-card:nth-child(2)::before { background: var(--final-accent); }
+.project-card:nth-child(2):hover {
+    border-color: var(--final-accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 40px var(--final-glow) inset, 0 0 20px var(--final-glow);
+}
+
+.project-card h2 {
+    font-family: 'Exo 2', sans-serif; font-size: 2em; font-weight: 600;
+    color: var(--primary-text); margin-bottom: 15px; padding-left: 15px;
+}
+.project-card .description {
+    font-size: 0.95em; line-height: 1.7; color: var(--secondary-text);
+    margin-bottom: 25px; padding-left: 15px;
+}
+.versions-container { margin-top: 20px; padding-left: 15px; }
+.versions-container h3 {
+    font-family: 'Exo 2', sans-serif; font-size: 1.05em; color: var(--secondary-text);
+    margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;
+}
+.version-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.version-button {
+    font-family: 'Exo 2', sans-serif; padding: 9px 15px; /* Уменьшил паддинги */
+    background-color: transparent; color: var(--accent-color); border: 2px solid var(--accent-color);
+    text-decoration: none; border-radius: var(--border-radius); font-weight: 500; /* Сделал чуть тоньше */
+    transition: all var(--transition-speed) ease;
+    position: relative; overflow: hidden; font-size: 0.85em; letter-spacing: 0.5px;
+    display: inline-flex; align-items: center; justify-content: center; text-align: center;
+}
+.version-button:hover {
+    background-color: var(--accent-color); color: var(--bg-color);
+    transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 168, 255, 0.3);
+}
+.version-button:active { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0, 168, 255, 0.2); }
+
+.version-button.final { border-color: var(--final-accent); color: var(--final-accent); }
+.version-button.final:hover {
+    background-color: var(--final-accent); color: var(--bg-color);
+    box-shadow: 0 5px 15px var(--final-glow);
+}
+
+.version-button .version-text { /* Текст версии теперь в span */
+    transition: transform 0.2s ease;
+}
+.version-button.final .version-text {
+    margin-right: 5px; /* Отодвигаем текст от метки */
+}
+
+.version-button.final::after {
+    content: '★ FINAL';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%; /* На всю высоту кнопки */
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 12px; /* Асимметричный паддинг */
+    background: var(--final-accent);
+    color: var(--bg-color);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.7em; /* Относительно шрифта кнопки (0.85em * 0.7 = ~0.6em) */
+    font-weight: 600;
+    line-height: 1;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%); /* Скошенный край */
+    border-top-right-radius: calc(var(--border-radius) - 2px); /* Учитываем границу кнопки */
+    border-bottom-right-radius: calc(var(--border-radius) - 2px);
+    transform: translateX(100%); /* Изначально скрыта */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+}
+.version-button.final:hover::after {
+    transform: translateX(0%); /* Показываем при наведении на кнопку */
+}
+.version-button.final:hover .version-text {
+    transform: translateX(-25px); /* Сдвигаем текст версии влево при наведении */
+}
+
+/* Секция "Что нового?" */
+.changelog {
+    margin-top: 20px;
+    padding-left: 15px; /* Такой же отступ, как у h2 и description */
+}
+.changelog h4 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1em;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+.changelog ul {
+    list-style: none;
+    padding-left: 0;
+}
+.changelog li {
+    font-size: 0.9em;
+    color: var(--secondary-text);
+    margin-bottom: 8px;
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+}
+.changelog li::before {
+    content: '›'; /* Или другая иконка/символ */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+}
+.project-card:nth-child(2) .changelog li::before { /* Для JxZapret другой цвет маркера */
+     color: var(--final-accent);
+}
+
+/* Секция "Поддержка и Сообщество" */
+.support-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2), 0 0 20px var(--glow-color-main) inset;
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeInUp 0.8s 0.5s ease-out backwards;
+}
+.support-section h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.8em;
+    color: var(--primary-text);
+    margin-bottom: 15px;
+}
+.support-section p {
+    color: var(--secondary-text);
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.support-button {
+    display: inline-block;
+    font-family: 'Exo 2', sans-serif;
+    padding: 12px 25px;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 10px rgba(0, 168, 255, 0.25);
+}
+.support-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35);
+}
+
+
+footer {
+    text-align: center; margin-top: 50px; padding-top: 25px;
+    border-top: 1px solid var(--border-color); width: 100%; max-width: 1000px;
+    color: var(--secondary-text); font-size: 0.9em;
+    animation: fadeInUp 0.8s 0.8s ease-out backwards; /* Увеличил задержку */
+}
+.social-links {
+    margin-bottom: 20px; display: flex; justify-content: center;
+    align-items: center; gap: 18px;
+}
+.social-button {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 50%;
+    background-color: transparent; /* Прозрачный фон */
+    color: var(--secondary-text);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+}
+.social-button svg { width: 20px; height: 20px; fill: currentColor; }
+.social-button:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+    color: #fff;
+}
+.social-button.telegram:hover { background-color: #0088cc; border-color: #0077b5; }
+.social-button.youtube:hover { background-color: #FF0000; border-color: #cc0000; }
+
+footer p { line-height: 1.6; }
+footer a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+footer a:hover { text-decoration: underline; color: var(--accent-hover); }
+
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 800px) {
+    header .logo { font-size: 2.6em; }
+    .project-card h2 { font-size: 1.7em; }
+}
+@media (max-width: 480px) {
+    body { padding: 20px 10px; }
+    header .logo { font-size: 2.1em; }
+    header .tagline { font-size: 1em; }
+    .project-card { padding: 20px; }
+    .project-card h2 { font-size: 1.5em; }
+    .project-card .description { font-size: 0.9em; padding-left: 10px; }
+    .versions-container { padding-left: 10px; }
+    .version-buttons { gap: 8px; justify-content: center; }
+    .version-button { font-size: 0.8em; padding: 8px 12px; }
+    .version-button.final .version-text { margin-right: 3px; }
+    .version-button.final:hover .version-text { transform: translateX(-18px); }
+    .version-button.final::after { font-size: 0.65em; padding: 0 8px 0 10px; clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);}
+    
+    .changelog { padding-left: 10px; }
+    .changelog h4 { font-size: 0.95em; }
+    .changelog li { font-size: 0.85em; }
+
+    .support-section { padding: 25px; }
+    .support-section h2 { font-size: 1.5em; }
+    .support-section p { font-size: 0.9em; }
+    .support-button { font-size: 0.9em; padding: 10px 20px; }
+
+    .social-button { width: 38px; height: 38px; }
+    .social-button svg { width: 18px; height: 18px; }
+}
