@@ -3,231 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JxTech by JelikTon: Проекты, Утилиты и Терминал</title>
+    <title>JxTech | JelikTon Hub</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <!-- Подключение Font Awesome для иконок -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo-sidebar">
-            Jx<span class="tech">Tech</span>
-        </div>
-        <nav>
-            <a href="#about" class="nav-link active" data-section="about">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-                <span>Обо мне</span>
-            </a>
-            <a href="#modules" class="nav-link" data-section="modules">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-                <span>Модули</span>
-            </a>
-            <a href="#utils" class="nav-link" data-section="utils">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-9.8-3.2c0-.11.02-.21.06-.31l4.29-7.43c.2-.34.04-.8-.31-1.01s-.8-.04-1.01.31L5.94 13.7c-.93.09-1.66.86-1.66 1.8H3c-.55 0-1 .45-1 1s.45 1 1 1h1v1c0 .55.45 1 1 1s1-.45 1-1v-1h8v1c0 .55.45 1 1 1s1-.45 1-1v-1h1c.55 0 1-.45 1-1s-.45-1-1-1h-2.28c-.04-.09-.07-.19-.07-.29zM19.43 2.58l-2.86 5c-.11.2-.02.46.19.57.08.04.17.06.25.06.15 0 .3-.07.39-.21l2.86-5c.16-.28.07-.65-.21-.81-.28-.17-.65-.07-.81.21z"/></svg>
-                <span>Утилиты и Разное</span>
-            </a>
-            <a href="#terminal" class="nav-link" data-section="terminal">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
-                <span>Терминал</span>
-            </a>
-        </nav>
-        <div class="sidebar-footer">
-             <p>© <span id="currentYearSidebar"></span> JxTech</p>
-        </div>
-    </div>
 
-    <button class="sidebar-toggle">
-        <span class="strip"></span>
-        <span class="strip"></span>
-        <span class="strip"></span>
-    </button>
+    <div class="background-fx"></div>
 
-    <div class="main-content">
-        <header class="main-header">
-            <h1 id="section-title" class="animated-gradient-text">Обо мне</h1>
+    <div class="main-container">
+        
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-border">
+                    <div class="logo-text">
+                        JX<span class="highlight">TECH</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="profile">
+                    <i class="fas fa-user-astronaut"></i> <span>Профиль</span>
+                </button>
+                <button class="tab-btn" data-tab="modules">
+                    <i class="fas fa-microchip"></i> <span>Модули</span>
+                </button>
+                <button class="tab-btn" data-tab="utils">
+                    <i class="fas fa-tools"></i> <span>Утилиты</span>
+                </button>
+                <button class="tab-btn" data-tab="terminal">
+                    <i class="fas fa-terminal"></i> <span>Терминал</span>
+                </button>
+            </nav>
         </header>
 
-        <section id="about" class="content-section active">
-            <div class="about-me-card">
-                <!-- ИЗМЕНЕНО: img заменен на div для background-image -->
-                <div class="profile-pic"></div>
-                <h2 class="animated-gradient-text">Привет, я JelikTon!</h2>
-                <p>Энтузиаст кода и технологий из солнечного Краснодарского края. В одиночку, на своем верном MacBook Pro 2011, я погружаюсь в мир разработки, создавая полезные инструменты и модули, которые делают жизнь пользователей Android чуточку лучше и свободнее.</p>
-                
-                <div class="info-grid">
-                    <div class="info-item">
-                        <h3><i class="fas fa-laptop-code"></i> Мой стек:</h3>
-                        <ul>
-                            <li>Shell</li>
-                            <li>Java</li>
-                            <li>Kotlin</li>
-                            <li>C#</li>
-                            <li>Python</li>
-                            <li>JavaScript</li>
-                            <li>CSS</li>
-                            <li>HTML</li>
-                        </ul>
-                    </div>
-                    <div class="info-item">
-                        <h3><i class="fas fa-tools"></i> Инструменты:</h3>
-                        <ul>
-                            <li>IntelliJ IDEA</li>
-                            <li>Visual Studio Code</li>
-                        </ul>
-                    </div>
-                     <div class="info-item">
-                        <h3><i class="fas fa-mobile-alt"></i> Экспертиза:</h3>
-                        <p>Прошил более <strong>300+ смартфонов</strong>, вдыхая новую жизнь в старые гаджеты и раскрывая потенциал новых!</p>
-                    </div>
-                </div>
+        <main class="content">
 
-                <p>Моя страсть — это не просто писать код, а видеть, как мои творения помогают людям. Исходники открыты, идеи приветствуются, а сообщество — это то, что вдохновляет двигаться вперед.</p>
-                
-                <div class="social-links-about">
-                    <p>Подписывайся и следи за новостями:</p>
-                    <a href="https://t.me/jeliktontech" target="_blank" class="social-button telegram" title="Telegram JelikTon Tech">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.58c-.23.87-1.03 1.08-1.74.7l-4.84-3.55l-2.27 2.21c-.25.26-.47.47-.97.47z"/></svg>
-                        <span>Telegram</span>
-                    </a>
-                     <a href="https://www.tiktok.com/@jeliktonxd" target="_blank" class="social-button tiktok" title="TikTok @jeliktonxd">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 122.8 122.8V209.9z"/></svg>
-                        <span>TikTok @jeliktonxd</span>
-                    </a>
-                    <a href="https://www.youtube.com/@JeliktonTech" target="_blank" class="social-button youtube" title="YouTube JeliktonTech">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.58 7.19A2.19 2.19 0 0 0 20 5.77C18.24 5.32 12 5.32 12 5.32s-6.24 0-8 .45A2.19 2.19 0 0 0 2.42 7.19C2 9.05 2 12 2 12s0 2.95.42 4.81a2.19 2.19 0 0 0 1.58 1.42c1.76.45 8 .45 8 .45s6.24 0 8-.45a2.19 2.19 0 0 0 1.58-1.42C22 14.95 22 12 22 12s0-2.95-.42-4.81zM9.75 15.56V8.44L15.75 12l-6 3.56z"/></svg>
-                        <span>YouTube</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="modules" class="content-section">
-            <div class="project-grid">
-                <div class="project-card" id="jxbooster">
-                    <h2 class="animated-gradient-text">JxBooster</h2>
-                    <p class="description">
-                        Разблокируйте истинный потенциал вашего устройства с JxBooster. Этот модуль для Magisk/KernelSU интеллектуально управляет системными ресурсами, устраняя троттлинг и обеспечивая пиковую производительность для игр и требовательных приложений.
-                    </p>
-                    <div class="versions-container">
-                        <h3>Версии JxBooster:</h3>
-                        <div class="version-buttons">
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">1.0.1</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">1.5</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">1.5.2</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">1.6</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">1.8</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">1.9</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">2.0X</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">2.1</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button final"><span class="version-text">3.1X</span></a>
+            <section id="profile" class="page active fade">
+                <div class="profile-layout">
+                    <div class="profile-banner">
+                        <img src="JxTech.jpg" alt="JelikTon Setup" class="banner-img" onerror="this.style.display='none';this.parentElement.style.background='#1a1a1a'">
+                        <div class="banner-overlay">
+                            <h1 class="shimmer-text">JelikTon</h1>
+                            <div class="tags-row">
+                                <span class="tag">/// Android Dev</span>
+                                <span class="tag">/// Web Dev</span>
+                                <span class="tag">/// Server Admin</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="changelog">
-                        <h4>Что нового в JxBooster 3.1X (Final)?</h4>
-                        <ul>
-                            <li>Полностью переработанный алгоритм управления частотами CPU/GPU.</li>
-                            <li>Улучшенная стабильность и совместимость с новейшими ядрами Android 13/14.</li>
-                            <li>Оптимизация для снижения энергопотребления в режиме ожидания и при малой нагрузке.</li>
-                            <li>Добавлена поддержка последних версий KernelSU и Magisk Alpha.</li>
-                            <li>Улучшена отзывчивость интерфейса системы.</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="project-card" id="jxzapret">
-                    <h2 class="animated-gradient-text">JxZapret</h2>
-                    <p class="description">
-                        Свобода в сети без компромиссов. JxZapret эффективно обходит блокировки популярных сервисов, таких как YouTube, Discord, Gemini и других, на территории РФ, возвращая вам полный доступ к глобальному информационному пространству.
-                    </p>
-                    <div class="versions-container">
-                        <h3>Версии JxZapret:</h3>
-                        <div class="version-buttons">
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button"><span class="version-text">1.0</span></a>
-                            <a href="https://t.me/jeliktontech" target="_blank" class="version-button final"><span class="version-text">1.1X</span></a>
+                    <div class="profile-grid">
+                        <div class="bio-block glass-box">
+                            <h2>Обо мне</h2>
+                            <p>
+                                Универсальный солдат IT из Краснодарского края. Работаю на легендарном MacBook Pro 2011. 
+                                Пишу сайты, поднимаю сервера, создаю модули. Исходный код открыт, эффективность — запредельная.
+                            </p>
+                            
+                            <div class="links-area">
+                                <h3><i class="fab fa-telegram-plane"></i> Связь & Ресурсы</h3>
+                                <div class="link-grid">
+                                    <a href="https://t.me/jxtec" target="_blank" class="link-btn channel">
+                                        <i class="fas fa-bullhorn"></i> Official Channel
+                                    </a>
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="link-btn">
+                                        <i class="fas fa-exchange-alt"></i> Hub / Transition
+                                    </a>
+                                    <a href="https://t.me/jeliktonchat" target="_blank" class="link-btn">
+                                        <i class="fas fa-comments"></i> JxChat
+                                    </a>
+                                    <a href="https://t.me/jeliktontechRAR" target="_blank" class="link-btn archive">
+                                        <i class="fas fa-file-archive"></i> Drivers & Files
+                                    </a>
+                                    <a href="https://t.me/Jelikton?text=Хочу%20в%20сквад" target="_blank" class="link-btn squad">
+                                        <i class="fas fa-users"></i> Вступить в JxSquad
+                                    </a>
+                                </div>
+
+                                <h3 style="margin-top: 20px;"><i class="fas fa-globe"></i> Web Проекты</h3>
+                                <div class="link-grid">
+                                    <a href="https://jxstab.github.io" target="_blank" class="link-btn web">
+                                        <i class="fab fa-github"></i> jxstab.github.io
+                                    </a>
+                                    <a href="https://jxdroid.github.io" target="_blank" class="link-btn web">
+                                        <i class="fab fa-android"></i> jxdroid.github.io
+                                    </a>
+                                    <div class="link-btn locked">
+                                        <i class="fas fa-comment-slash"></i> JxNice (Dev...)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills-block glass-box">
+                            <h3><i class="fas fa-code"></i> Стек навыков</h3>
+                            <div class="skill-bar">
+                                <div class="label"><span>HTML / CSS</span> <span class="val">90% (GOD)</span></div>
+                                <div class="bar-bg"><div class="bar-fill purple" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="label"><span>JS (Web/Node)</span> <span class="val">Хорошо</span></div>
+                                <div class="bar-bg"><div class="bar-fill purple" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="label"><span>Server / Linux</span> <span class="val">75%</span></div>
+                                <div class="bar-bg"><div class="bar-fill blue" style="width: 75%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="label"><span>Kotlin</span> <span class="val error">Плохо</span></div>
+                                <div class="bar-bg"><div class="bar-fill red" style="width: 25%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="label"><span>Java</span> <span class="val error">Ужасно</span></div>
+                                <div class="bar-bg"><div class="bar-fill red" style="width: 10%"></div></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="changelog">
-                        <h4>Что нового в JxZapret 1.1X (Final)?</h4>
-                        <ul>
-                            <li>Обновлены списки и методы обхода для актуальных блокировок на [текущий месяц/год].</li>
-                            <li>Улучшена производительность и снижена нагрузка на системные ресурсы.</li>
-                            <li>Более надежная работа с различными конфигурациями сети и VPN-сервисами.</li>
-                            <li>Добавлена поддержка [какой-нибудь новый сервис, если актуально, например, определённый CDN].</li>
-                        </ul>
-                    </div>
                 </div>
-            </div>
-            <section class="support-section">
-                <h2 class="animated-gradient-text">Поддержка и Сообщество</h2>
-                <p>
-                    Присоединяйтесь к нашему Telegram-каналу <a href="https://t.me/jeliktontech" target="_blank">@jeliktontech</a>, чтобы получать последние обновления,
-                    задавать вопросы, делиться опытом и быть частью активного сообщества пользователей JxTech!
-                </p>
-                <a href="https://t.me/jeliktontech" target="_blank" class="support-button">
-                    Присоединиться к JelikTon Tech
-                </a>
             </section>
-        </section>
 
-        <section id="utils" class="content-section">
-            <div class="utils-card">
-                <h2 class="animated-gradient-text">Утилиты и Полезности</h2>
-                <p>Здесь собраны различные инструменты, которые могут пригодиться для работы с вашими Android-устройствами. Все файлы и инструкции доступны в моем техническом Telegram-канале.</p>
-                
-                <div class="utils-item">
-                    <h3>Прошивальщики и Драйвера</h3>
-                    <p>Коллекция актуальных прошивальщиков для различных моделей смартфонов (Xiaomi MiFlash, Odin для Samsung, SP Flash Tool для MTK и др.), а также необходимые ADB/Fastboot драйвера и драйвера для специфических чипсетов.</p>
-                    <a href="https://t.me/jeliktontech" target="_blank" class="download-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="margin-right: 8px;"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                        Перейти и Скачать в Telegram
-                    </a>
-                </div>
-                
-                <div class="utils-item">
-                    <h3>Другие полезности (скоро)</h3>
-                    <p>В будущем здесь появятся и другие интересные утилиты и ресурсы. Следите за обновлениями!</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="terminal" class="content-section">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="terminal-button red"></span>
-                        <span class="terminal-button yellow"></span>
-                        <span class="terminal-button green"></span>
+            <section id="modules" class="page fade">
+                <div class="modules-grid">
+                    <div class="module-card glass-box fire-card">
+                        <div class="fire-bg"></div>
+                        <div class="card-content">
+                            <div class="card-head">
+                                <i class="fas fa-fire icon-glow red"></i>
+                                <div class="card-title">
+                                    <h3>JxBooster</h3>
+                                    <span class="badge red">Performance</span>
+                                </div>
+                            </div>
+                            <p class="desc">Устранение троттлинга, адская оптимизация CPU/GPU для игр. Работает на Magisk/KSU.</p>
+                            
+                            <div class="versions-wrapper">
+                                <span class="v-label">Скачать версию:</span>
+                                <div class="v-grid">
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="v-btn">1.9</a>
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="v-btn">2.0X</a>
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="v-btn">2.1</a>
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="v-btn final">3.1X Final</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="terminal-title">JxTerm v0.1</div>
-                </div>
-                <div class="terminal-body">
-                    <p>Welcome to JxTech Interactive Terminal (Demo)</p>
-                    <p>Type 'help' for a list of available commands.</p>
-                    <div class="terminal-output" id="terminalOutput"></div>
-                    <div class="terminal-input-line">
-                        <span class="prompt">user@jxtech:~$ </span>
-                        <input type="text" id="terminalInput" class="terminal-input" autofocus>
+
+                    <div class="module-card glass-box storm-card">
+                        <div class="storm-bg"></div>
+                        <div class="card-content">
+                            <div class="card-head">
+                                <i class="fas fa-bolt icon-glow blue"></i>
+                                <div class="card-title">
+                                    <h3>JxZapret</h3>
+                                    <span class="badge blue">Unblocker</span>
+                                </div>
+                            </div>
+                            <p class="desc">Обход DPI (YouTube, Discord) без VPN. Свободный интернет на максимальной скорости.</p>
+                            
+                            <div class="versions-wrapper">
+                                <span class="v-label">Скачать версию:</span>
+                                <div class="v-grid">
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="v-btn">1.0</a>
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="v-btn">1.3XX</a>
+                                    <a href="https://t.me/jeliktontech" target="_blank" class="v-btn final">1.1X Final</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <footer class="main-footer-credits">
-            <div class="social-links">
-                <a href="https://t.me/jeliktontech" target="_blank" class="social-button telegram" title="Telegram JelikTon Tech">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.58c-.23.87-1.03 1.08-1.74.7l-4.84-3.55l-2.27 2.21c-.25.26-.47.47-.97.47z"/></svg>
-                </a>
-                 <a href="https://www.tiktok.com/@jeliktonxd" target="_blank" class="social-button tiktok" title="TikTok @jeliktonxd">
-                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 122.8 122.8V209.9z"/></svg>
-                </a>
-                <a href="https://www.youtube.com/@JeliktonTech" target="_blank" class="social-button youtube" title="YouTube JeliktonTech">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.58 7.19A2.19 2.19 0 0 0 20 5.77C18.24 5.32 12 5.32 12 5.32s-6.24 0-8 .45A2.19 2.19 0 0 0 2.42 7.19C2 9.05 2 12 2 12s0 2.95.42 4.81a2.19 2.19 0 0 0 1.58 1.42c1.76.45 8 .45 8 .45s6.24 0 8-.45a2.19 2.19 0 0 0 1.58-1.42C22 14.95 22 12 22 12s0-2.95-.42-4.81z"/></svg>
-                </a>
-            </div>
-            <p>© <span id="currentYearMain"></span> JxTech by JelikTon. Все модули и поддержка в <a href="https://t.me/jeliktontech" target="_blank">Telegram-канале</a>.</p>
+            <section id="utils" class="page fade">
+                <div class="utils-list glass-box">
+                    <div class="util-item">
+                        <div class="u-icon"><i class="fab fa-android"></i></div>
+                        <div class="u-info">
+                            <h4>ADB & Fastboot Pack</h4>
+                            <p>Драйвера и утилиты платформы.</p>
+                        </div>
+                        <a href="https://t.me/jeliktontechRAR" class="dl-btn">Get</a>
+                    </div>
+                    <div class="util-item">
+                        <div class="u-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="u-info">
+                            <h4>Flash Tools (Odin/MiFlash)</h4>
+                            <p>Прошивальщики для Samsung и Xiaomi.</p>
+                        </div>
+                        <a href="https://t.me/jeliktontechRAR" class="dl-btn">Get</a>
+                    </div>
+                    <div class="util-item">
+                        <div class="u-icon"><i class="fas fa-file-code"></i></div>
+                        <div class="u-info">
+                            <h4>MTK Drivers</h4>
+                            <p>Спец. драйвера для MediaTek.</p>
+                        </div>
+                        <a href="https://t.me/jeliktontechRAR" class="dl-btn">Get</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="terminal" class="page fade">
+                <div class="terminal-container" id="terminalContainer">
+                    <div class="term-bar">
+                        <div class="circles">
+                            <span class="c red"></span><span class="c yellow"></span><span class="c green"></span>
+                        </div>
+                        <div class="term-title">user@jxtech-os:~</div>
+                    </div>
+                    <div class="term-screen" id="termOutput">
+                        </div>
+                    <div class="term-input-area">
+                        <span class="prompt">➜ ~</span>
+                        <input type="text" id="termInput" autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer class="footer">
+            <a href="https://t.me/jeliktontech" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.youtube.com/@JeliktonTech" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@jeliktonxd" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://github.com/jxstab" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </footer>
     </div>
 
